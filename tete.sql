@@ -1,0 +1,7 @@
+-- Active: 1701199340261@@127.0.0.1@3306
+DELETE FROM sistemas;
+DELETE FROM matriz;
+
+DELETE FROM perfis;
+
+DELETE FROM users;

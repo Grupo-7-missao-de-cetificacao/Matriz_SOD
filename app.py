@@ -515,20 +515,6 @@ class App(CTk):
                     mensagem = f"{nome_user[0].upper() + nome_user[1:]}, não pode ser cadastrado ao {sistema_escolhido1} com o perfil de usuario {perfil_escolhido}, pois o mesmo já está cadastrado com  os seguintes dados \n\nSISTEMA: {nome_sistema[0][0]}\nPERFIL: {dados_banco[0][1]}\n\nO acesso pode gerar um conflito de interesse então não podera ser cadastrado para este perfil"
                     resposta = messagebox.showerror("CONFLITO", mensagem)
                     raise Exception('erro')
-                else:
-                    resposta = messagebox.askquestion(
-                        'Confirmação', 'Confirmar o cadastro?')
-                    if resposta == 'yes':
-                        self.systemsdb.criar_usuario(
-                            id_sistema, perfil_escolhido, nome_user, cpf)
-                        print(
-                            f'Usuario Cadastrado - Nome: {nome_user}, CPF: {cpf}, Nome Perfil: {perfil_escolhido}, Sistema: {id_sistema}')
-                        self.entry_nomeUsuario.delete(0, 'end')
-                        self.entry_cpf.delete(0, 'end')
-                        self.entry_nomeUsuario.focus_set()
-                        # Atualizar a tabela quando uma nova entrada é criada
-                        self.update_data_tableUsuario()
-
         resposta = messagebox.askquestion(
             'Confirmação', 'Confirmar o cadastro?')
         if resposta == 'yes':
